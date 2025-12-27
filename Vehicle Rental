@@ -1,0 +1,34 @@
+class Vehicle:
+    def __init__(self, model, rate):
+        self.model = model
+        self.rate = rate
+
+    def calculate_rental(self, days):
+        return self.rate * days
+
+class Car(Vehicle):
+    pass
+class Bike(Vehicle):
+    def calculate_rental(self, days):
+        return self.rate * days * 0.8
+class Truck(Vehicle):
+    def calculate_rental(self, days):
+        return self.rate * days * 1.5
+vehicles = [
+    Car("Swift", 2000),
+    Bike("Yamaha", 800),
+    Truck("Tata", 4000)
+]
+
+days = 3
+
+for v in vehicles:
+    print(v.model, "Rental:", v.calculate_rental(days))
+
+
+C:\Users\Asha\PycharmProjects\PythonProject\.venv\Scripts\python.exe "C:\Users\Asha\PycharmProjects\PythonProject\PythonLearning\Vehicle Rental.py" 
+Swift Rental: 6000
+Yamaha Rental: 1920.0
+Tata Rental: 18000.0
+
+Process finished with exit code 0
